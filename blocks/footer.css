@@ -1,8 +1,16 @@
 .footer {
   color: #545454;
-  margin-left: 180px;
 }
 
 .footer__copyright {
-  margin: 67px auto 60px auto;
+  margin-top: 67px;
+  margin-bottom: 60px;
+}
+
+@media screen and (max-width: 320px) {
+  .footer__copyright {
+    margin-top: 46px;
+    margin-bottom: 36px;
+    width: 100%;
+  }
 }

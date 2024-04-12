@@ -20,10 +20,12 @@
   width: 24px;
   grid-area: button;
   margin-left: 25px;
+  border: 2px solid white;
 }
 
 .profile__edit-button:hover {
   opacity: 0.6;
+  cursor: pointer;
 }
 
 .profile__add-button {
@@ -31,10 +33,12 @@
   width: 150px;
   height: 58px;
   margin-left: auto;
+  border: 2px solid white;
 }
 
 .profile__add-button:hover {
   opacity: 0.6;
+  cursor: pointer;
 }
 
 .profile__title {
