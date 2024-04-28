@@ -29,3 +29,7 @@ Tools used: Figma, VS Code, TripleTen Dashboard.. GOOGLE!
 **Video**
 
 Video Link for Submission: https://drive.google.com/file/d/1UW9iwu3-VR1FxuhOh7zJVTJsgwgTVKEB/view?usp=sharing
+
+**GitHub**
+
+Link to github: https://github.com/rodriguezdk11/se_project_aroundtheus
