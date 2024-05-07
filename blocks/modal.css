@@ -9,6 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  visibility: hidden;
 }
 
 .modal__container {
@@ -17,6 +18,11 @@
   padding: 36px;
   border-radius: 10px;
   max-width: 430px;
+}
+
+.modal_opened {
+  display: flex;
+  visibility: visible;
 }
 
 .modal__close {
@@ -31,6 +37,11 @@
   width: 40px;
   background-repeat: no-repeat;
   background-size: contain;
+  cursor: pointer;
+}
+
+.modal__close:hover {
+  opacity: 50%;
 }
 
 .modal__heading {
@@ -78,4 +89,8 @@
 .modal__form {
   display: flex;
   flex-direction: column;
+}
+
+.modal__button:hover {
+  opacity: 50%;
 }
