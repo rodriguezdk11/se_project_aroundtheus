@@ -40,7 +40,7 @@ const profileDescriptionInput = document.querySelector(
 );
 
 const profileEditForm = profileEditModal.querySelector(".modal__form");
-const cardListEl = document.querySelector(".card__list");
+const cardListEl = document.querySelector(".cards__list");
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 
@@ -51,10 +51,9 @@ function closePopup() {
 
   function getCardElement(cardData) {
     console.log(cardData.name);
-    const cardElement = cardElement.cloneNode(true);
+    const cardElement = cardTemplate.cloneNode(true);
     const cardImageEl = cardElement.querySelector(".card__image");
-    const cardTitleEl = cardElement.querySelector(".card__title");
-
+    const cardTitleEl = cardElement.querySelector(".card__text");
     cardImageEl.src = cardData.link;
     cardTitleEl.textContent = cardData.name;
     cardImageEl.alt = cardData.name;
