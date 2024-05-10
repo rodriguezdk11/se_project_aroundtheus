@@ -94,3 +94,58 @@
 .modal__button:hover {
   opacity: 50%;
 }
+
+@media screen and (max-width: 320px) {
+  .modal {
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .modal__container {
+    max-width: 260px;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .modal__close {
+    position: absolute;
+    top: -45px;
+    right: -0px;
+    background-image: url(../images/Close\ Icon.svg);
+    border: none;
+    background-color: transparent;
+    outline: none;
+    height: 26px;
+    width: 26px;
+  }
+
+  .modal__form {
+    padding: 0 0 15px 5px;
+    max-width: 244px;
+    width: 100%;
+  }
+
+  .modal__heading {
+    padding-left: 5px;
+    padding-bottom: 0px;
+    padding-top: 15px;
+    max-width: 238px;
+    width: 100%;
+    margin-bottom: 75px;
+    font-size: 18px;
+  }
+
+  .modal__input:first-of-type {
+    margin-bottom: 29px;
+  }
+
+  .modal__input:last-of-type {
+    margin-bottom: 45px;
+  }
+
+  .modal__button {
+    max-width: 238px;
+    align-self: center;
+    font-size: 14px;
+  }
+}
