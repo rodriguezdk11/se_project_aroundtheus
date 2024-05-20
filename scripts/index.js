@@ -43,11 +43,17 @@ const profileEditForm = profileEditModal.querySelector(".modal__form");
 const cardListEl = document.querySelector(".cards__list");
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
+const addNewCardButton = document.querySelector(".profile__add-button");
+const addNewCardModal = document.querySelector("#add-card-modal");
+const addNewCardCloseButton = addNewCardModal.querySelector(".modal__close");
+const cardTitleInput = addNewCardModal.querySelector("#card-title-input");
+const cardURLInput = addNewCardModal.querySelector("#card-url-input");
+const addNewCardForm = document.querySelector("#add-card-form");
 
 // Functions
 
-function closePopup() {
-  profileEditModal.classList.remove("modal_opened");
+function closePopup(modal) {
+  modal.classList.remove("modal_opened");
 }
 function getCardElement(cardData) {
   console.log(cardData.name);
@@ -66,7 +72,17 @@ function handleProfileEditSubmit(e) {
   e.preventDefault();
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
-  closePopup();
+  closePopup(profileEditModal);
+}
+
+function handleAddCardSubmit(e) {
+  e.preventDefault();
+  const cardTitle = cardTitleInput.value;
+  const cardURL = cardURLInput.value;
+  const cardInfo = { name: cardTitle, link: cardURL };
+  const cardElement = getCardElement(cardInfo);
+  cardListEl.prepend(cardElement);
+  closePopup(addNewCardModal);
 }
 
 // Event Listeners
@@ -77,9 +93,22 @@ profileEditButton.addEventListener("click", () => {
   profileEditModal.classList.add("modal_opened");
 });
 
-profileEditCloseButton.addEventListener("click", closePopup);
+addNewCardCloseButton.addEventListener("click", () => {
+  closePopup(addNewCardModal);
+});
+addNewCardButton.addEventListener("click", () => {
+  addNewCardButton.classList.add("modal_opened");
+});
 
+profileEditCloseButton.addEventListener("click", () => {
+  closePopup(profileEditModal);
+});
+addNewCardButton.addEventListener("click", () => {
+  addNewCardModal.classList.add("modal_opened");
+});
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
+
+addNewCardForm.addEventListener("submit", handleAddCardSubmit);
 
 initialCards.forEach((cardData) => {
   const cardElement = getCardElement(cardData);
