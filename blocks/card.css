@@ -47,7 +47,27 @@
   border: none;
 }
 
+.card__like-button_active {
+  background-image: url(../images/like-active.svg);
+}
+
 .card__like-button:hover {
   opacity: 50%;
+  cursor: pointer;
+}
+
+.card__delete-button {
+  background: transparent url(../images/Trash.svg) center no-repeat;
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  border: none;
+  width: 18px;
+  height: 19px;
+  transition: transform 0.3s ease;
+}
+
+.card__delete-button:hover {
+  color: rgba(255, 255, 255, 0.6);
   cursor: pointer;
 }

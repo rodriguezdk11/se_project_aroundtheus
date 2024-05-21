@@ -55,6 +55,7 @@ const addNewCardForm = document.querySelector("#add-card-form");
 function closePopup(modal) {
   modal.classList.remove("modal_opened");
 }
+
 function getCardElement(cardData) {
   console.log(cardData.name);
   const cardElement = cardTemplate.cloneNode(true);
@@ -113,4 +114,11 @@ addNewCardForm.addEventListener("submit", handleAddCardSubmit);
 initialCards.forEach((cardData) => {
   const cardElement = getCardElement(cardData);
   cardListEl.prepend(cardElement);
+});
+
+const likeButtons = document.querySelector(".card__like-button");
+likeButtons.forEach((likeButton) => {
+  likeButton.addEventListener("click", () => {
+    likeButton.classList.toggle(".card__like-button_active");
+  });
 });
