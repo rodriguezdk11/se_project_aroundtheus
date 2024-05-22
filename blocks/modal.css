@@ -95,6 +95,28 @@
   opacity: 50%;
 }
 
+.modal__image {
+  max-height: 75vh;
+  max-width: 75vw;
+}
+.modal__image-label {
+  position: absolute;
+  color: rgba(255, 255, 255, 1);
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  bottom: -33px;
+  left: 40px;
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.modal__container-image {
+  background: transparent;
+  align-items: center;
+}
+
 @media screen and (max-width: 320px) {
   .modal {
     margin: 0 auto;
@@ -147,5 +169,19 @@
     max-width: 238px;
     align-self: center;
     font-size: 14px;
+  }
+
+  .modal__image {
+    max-width: 282px;
+  }
+
+  .modal__image-label {
+    margin: 0;
+  }
+
+  .modal__container-image {
+    display: flex;
+    padding: 0px;
+    width: 240px;
   }
 }

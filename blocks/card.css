@@ -3,6 +3,7 @@
   flex-direction: column;
   border-radius: 10px;
   font-weight: 900;
+  position: relative;
 }
 
 .card__image {
