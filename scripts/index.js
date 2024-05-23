@@ -87,6 +87,10 @@ function getCardElement(cardData) {
     previewImageModal.classList.add("modal_opened");
   });
 
+  function openPopup(popup) {
+    popup.classList.add("modal_opened");
+  }
+
   return cardElement;
 }
 
