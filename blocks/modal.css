@@ -104,7 +104,6 @@
 }
 
 .modal__image-label {
-  position: absolute;
   color: rgba(255, 255, 255, 1);
   font-family: Inter;
   font-size: 12px;
@@ -112,15 +111,15 @@
   bottom: -33px;
   left: -200px;
   text-align: left;
-  margin-top: 0;
+  margin-top: 10px;
   margin-bottom: 0;
 }
 
 .modal__container-image {
   background: transparent;
-  align-items: center;
   display: flex;
-  justify-content: center;
+  position: relative;
+  flex-direction: column;
 }
 
 .modal__image-close {
