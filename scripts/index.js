@@ -111,6 +111,8 @@ function handleAddCardSubmit(e) {
   const cardElement = getCardElement(cardInfo);
   cardListEl.prepend(cardElement);
   closePopup(addNewCardModal);
+  cardTitleInput.value = "";
+  cardURLInput.value = "";
 }
 
 // Event Listeners

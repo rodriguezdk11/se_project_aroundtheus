@@ -30,8 +30,8 @@
 
 .modal__close {
   position: absolute;
-  top: -45px;
-  right: -45px;
+  bottom: calc(100% + 5px);
+  left: calc(100% + 5px);
   background-image: url(../images/Close\ Icon.svg);
   border: none;
   background-color: transparent;
@@ -109,16 +109,35 @@
   font-family: Inter;
   font-size: 12px;
   font-weight: 400;
-  bottom: -33px;
-  left: 0px;
+  bottom: 0px;
+  left: -140px;
   text-align: left;
   margin-top: 0;
   margin-bottom: 0;
 }
 
+.modal__image-close {
+  position: absolute;
+  top: -45px;
+  right: -45px;
+  bottom: calc(100% + 5px);
+  left: calc(100% + 5px);
+  background-image: url(../images/Close\ Icon.svg);
+  border: none;
+  background-color: transparent;
+  outline: none;
+  height: 40px;
+  width: 40px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+
 .modal__container-image {
   background: transparent;
   align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 @media screen and (max-width: 320px) {
