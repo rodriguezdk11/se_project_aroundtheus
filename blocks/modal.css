@@ -87,6 +87,7 @@
   width: 358px;
   height: 50px;
   cursor: pointer;
+  transition: opacity 0.5s linear;
 }
 
 .modal__form {
@@ -196,7 +197,7 @@
   }
 
   .modal__image-label {
-    margin: 0;
+    margin-top: 10px;
   }
 
   .modal__container-image {
@@ -204,4 +205,11 @@
     padding: 0px;
     width: 240px;
   }
+}
+
+.modal__image-close {
+  width: 30px;
+  height: 30px;
+  top: -230x;
+  right: -15px;
 }
