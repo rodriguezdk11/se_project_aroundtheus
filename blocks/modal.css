@@ -10,6 +10,7 @@
   align-items: center;
   justify-content: center;
   visibility: hidden;
+  opacity: 0;
   transition: visibility 0s 0.5s, opacity 0.5s linear;
 }
 
@@ -26,6 +27,7 @@
   display: flex;
   visibility: visible;
   transition: visibility 0s, opacity 0.5s linear;
+  opacity: 1;
 }
 
 .modal__close {
@@ -44,7 +46,7 @@
 }
 
 .modal__close:hover {
-  opacity: 50%;
+  opacity: 1;
 }
 
 .modal__heading {
@@ -96,7 +98,8 @@
 }
 
 .modal__button:hover {
-  opacity: 50%;
+  opacity: 1;
+  visibility: visible;
 }
 
 .modal__image {
