@@ -151,7 +151,7 @@ addNewCardCloseButton.addEventListener("click", () => {
   closePopup(addNewCardModal);
 });
 addNewCardButton.addEventListener("click", () => {
-  openPopup(addNewCardbutton);
+  openPopup(addNewCardButton);
 });
 
 profileEditCloseButton.addEventListener("click", () => {
