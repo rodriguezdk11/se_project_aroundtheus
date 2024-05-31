@@ -163,6 +163,7 @@
     outline: none;
     height: 26px;
     width: 26px;
+    left: calc(100% - 40px);
   }
 
   .modal__form {
