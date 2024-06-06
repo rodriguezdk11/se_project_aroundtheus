@@ -102,6 +102,12 @@
   visibility: visible;
 }
 
+.modal__button_disabled {
+  background-color: #fff;
+  border: 1px solid rgba(86, 13, 13, 0.2);
+  color: rgba(0, 0, 0, 0.2);
+}
+
 .modal__image {
   max-height: 75vh;
   max-width: 75vw;
@@ -139,6 +145,26 @@
   background-repeat: no-repeat;
   background-size: contain;
   cursor: pointer;
+}
+
+.modal__error {
+  max-width: 100%;
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.5px;
+}
+
+.modal__error_visible {
+  position: absolute;
+  display: block;
+  color: #ff0000;
+  max-height: 12px;
+  opacity: 1;
+}
+
+.modal__input_type_error {
+  border-bottom: 1px solid #ff0000;
 }
 
 @media screen and (max-width: 320px) {
