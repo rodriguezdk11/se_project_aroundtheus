@@ -76,7 +76,21 @@
 }
 
 .modal__input:last-of-type {
-  margin-bottom: 48px;
+  margin-bottom: 10px;
+}
+
+.modal__input_type_description {
+  margin-top: 25px;
+}
+
+.modal__input_type_url {
+  margin-top: 30px;
+}
+
+.modal__input_type_title {
+}
+
+.modal__input_type_name {
 }
 
 .modal__button {
@@ -90,6 +104,7 @@
   height: 50px;
   cursor: pointer;
   transition: opacity 0.5s linear;
+  margin-top: 31px;
 }
 
 .modal__form {
@@ -161,6 +176,7 @@
   color: #ff0000;
   max-height: 12px;
   opacity: 1;
+  margin: 0px;
 }
 
 .modal__input_type_error {
