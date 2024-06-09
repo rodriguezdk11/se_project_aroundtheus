@@ -59,14 +59,6 @@ const previewImageModal = document.querySelector("#preview-image-modal");
 
 // Functions
 
-function closePopup(modal) {
-  modal.classList.remove("modal_opened");
-}
-
-function openPopup(popup) {
-  popup.classList.add("modal_opened");
-}
-
 function getCardElement(cardData) {
   console.log(cardData.name);
   const cardElement = cardTemplate.cloneNode(true);

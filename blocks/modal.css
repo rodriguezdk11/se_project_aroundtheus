@@ -24,7 +24,6 @@
 }
 
 .modal_opened {
-  display: flex;
   visibility: visible;
   transition: visibility 0s, opacity 0.5s linear;
   opacity: 1;
@@ -46,7 +45,7 @@
 }
 
 .modal__close:hover {
-  opacity: 1;
+  opacity: 0.8;
 }
 
 .modal__heading {
@@ -69,6 +68,7 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 16.94px;
+  width: 100%;
 }
 
 .modal__input:first-of-type {
@@ -79,18 +79,8 @@
   margin-bottom: 10px;
 }
 
-.modal__input_type_description {
+.modal__input:not(:first-of-type) {
   margin-top: 25px;
-}
-
-.modal__input_type_url {
-  margin-top: 30px;
-}
-
-.modal__input_type_title {
-}
-
-.modal__input_type_name {
 }
 
 .modal__button {
@@ -114,7 +104,6 @@
 
 .modal__button:hover {
   opacity: 1;
-  visibility: visible;
 }
 
 .modal__button_disabled {
