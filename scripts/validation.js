@@ -21,6 +21,14 @@ function hideInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
 
 function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
   let foundInvalid = false;
+}
+
+function checkFormValidity(formEl, inputEl, config) {
+  const checkFormValidity = (inputs) =>
+    inputs.every((input) => input.validity.valid);
+  const toggleButtonState = (inputEls, submitButton, option) => {
+    const isFormValid = checkFormValidity(inputEls);
+  };
 
   inputEls.forEach((inputEl) => {
     if (!inputEl.validity.valid) {
@@ -30,7 +38,8 @@ function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
 
   if (foundInvalid) {
     submitButton.classList.add(inactiveButtonClass);
-    return (submitButton.disabled = true);
+    submitButton.disabled = true;
+    return;
   }
 
   submitButton.classList.remove(inactiveButtonClass);
