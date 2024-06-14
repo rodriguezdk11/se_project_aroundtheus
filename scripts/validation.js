@@ -26,24 +26,19 @@ function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
 function checkFormValidity(formEl, inputEl, config) {
   const checkFormValidity = (inputs) =>
     inputs.every((input) => input.validity.valid);
+
   const toggleButtonState = (inputEls, submitButton, option) => {
     const isFormValid = checkFormValidity(inputEls);
-  };
 
-  inputEls.forEach((inputEl) => {
-    if (!inputEl.validity.valid) {
-      foundInvalid = true;
+    if (!isFormValid) {
+      submitButton.classList.add(inactiveButtonClass);
+      submitButton.disabled = true;
+      return;
     }
-  });
 
-  if (foundInvalid) {
-    submitButton.classList.add(inactiveButtonClass);
-    submitButton.disabled = true;
-    return;
-  }
-
-  submitButton.classList.remove(inactiveButtonClass);
-  submitButton.disabled = false;
+    submitButton.classList.remove(inactiveButtonClass);
+    submitButton.disabled = false;
+  };
 }
 
 function setEventListeners(formEl, options) {

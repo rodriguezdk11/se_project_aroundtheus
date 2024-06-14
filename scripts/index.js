@@ -80,7 +80,7 @@ function getCardElement(cardData) {
     previewImageElement.src = cardData.link;
     previewImageElement.alt = cardData.name;
     previewImageLabel.textContent = cardData.name;
-    openPopup(openModal);
+    openModal;
   });
 
   return cardElement;
@@ -143,14 +143,14 @@ addNewCardCloseButton.addEventListener("click", () => {
   closePopup(addNewCardModal);
 });
 addNewCardButton.addEventListener("click", () => {
-  openPopup(openModal);
+  openModal;
 });
 
 profileEditCloseButton.addEventListener("click", () => {
   closePopup(profileEditModal);
 });
 addNewCardButton.addEventListener("click", () => {
-  openPopup(openModal);
+  openModal;
 });
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
