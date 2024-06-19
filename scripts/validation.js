@@ -20,15 +20,22 @@ function checkInputValidity(formEl, inputEl, inputEls, config) {
     errorMessageEl.classList.remove(errorClass);
   }
 
-  function toggleButtonState(formEl, formIsValid, options) {
-    const submitButton = formEl.querySelector(options.submitButtonSelector);
-    if (formIsValid) {
-      submitButton.classlist.remove(options.inactiveButtonClass);
-      submitButton.disabled = false;
-    } else {
-      submitButton.classlist.add(options.inactiveButtonClass);
-      submitButton.disabled = true;
+  function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
+    let foundInvalid = false;
+
+    inputEls.forEach((inputEl) => {
+      if (!inputEl.validity.valid) {
+        foundInvalid = true;
+      }
+    });
+
+    if (foundInvalid) {
+      submitButton.classList.add(inactiveButtonClass);
+      return (submitButton.disabled = true);
     }
+
+    submitButton.classList.remove(inactiveButtonClass);
+    submitButton.disabled = false;
   }
 }
 function checkFormValidity(inputEls) {
@@ -45,6 +52,7 @@ function setEventListeners(formEl, options) {
   inputEls.forEach((inputEl) => {
     inputEl.addEventListener("input", (e) => {
       checkInputValidity(formEl, inputEl, inputEls, options);
+      toggleButtonState(inputEls, submitButton, config);
     });
   });
 }
