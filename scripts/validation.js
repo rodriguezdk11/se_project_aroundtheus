@@ -47,10 +47,6 @@ function setEventListeners(formEl, options) {
       checkInputValidity(formEl, inputEl, inputEls, options);
     });
   });
-
-  formEl.addEventListener("input", () => {
-    checkFormValidity(inputEls, submitButton, config);
-  });
 }
 
 function enableValidation(options) {
