@@ -12,27 +12,27 @@ function checkInputValidity(formEl, inputEl, inputEls, config) {
   } else {
     hideInputError(formEl, inputEl, config);
   }
-
-  function hideInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
-    const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
-    inputEl.classList.remove(inputErrorClass);
-    errorMessageEl.textContent = "";
-    errorMessageEl.classList.remove(errorClass);
-  }
-
-  function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
-    const isFormValid = checkFormValidity(inputEls); // note, that it checks if form is valid
-
-    if (!isFormValid) {
-      submitButton.classList.add(inactiveButtonClass);
-      submitButton.disabled = true;
-      return;
-    }
-
-    submitButton.classList.remove(inactiveButtonClass);
-    submitButton.disabled = false;
-  }
 }
+function hideInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
+  const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
+  inputEl.classList.remove(inputErrorClass);
+  errorMessageEl.textContent = "";
+  errorMessageEl.classList.remove(errorClass);
+}
+
+function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
+  const isFormValid = checkFormValidity(inputEls);
+
+  if (!isFormValid) {
+    submitButton.classList.add(inactiveButtonClass);
+    submitButton.disabled = true;
+    return;
+  }
+
+  submitButton.classList.remove(inactiveButtonClass);
+  submitButton.disabled = false;
+}
+
 function checkFormValidity(inputEls) {
   if (inputEls.every((input) => input.validity.valid)) {
     return true;
@@ -47,7 +47,7 @@ function setEventListeners(formEl, options) {
   inputEls.forEach((inputEl) => {
     inputEl.addEventListener("input", (e) => {
       checkInputValidity(formEl, inputEl, inputEls, options);
-      toggleButtonState(inputEls, submitButton, config);
+      toggleButtonState(inputEls, submitButton, options);
     });
   });
 }
