@@ -21,17 +21,12 @@ function checkInputValidity(formEl, inputEl, inputEls, config) {
   }
 
   function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
-    let foundInvalid = false;
+    const isFormValid = checkFormValidity(inputEls); // note, that it checks if form is valid
 
-    inputEls.forEach((inputEl) => {
-      if (!inputEl.validity.valid) {
-        foundInvalid = true;
-      }
-    });
-
-    if (foundInvalid) {
+    if (!isFormValid) {
       submitButton.classList.add(inactiveButtonClass);
-      return (submitButton.disabled = true);
+      submitButton.disabled = true;
+      return;
     }
 
     submitButton.classList.remove(inactiveButtonClass);
