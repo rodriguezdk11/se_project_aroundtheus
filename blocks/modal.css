@@ -103,13 +103,18 @@
 }
 
 .modal__button:hover {
-  opacity: 1;
+  opacity: 0.8;
 }
 
 .modal__button_disabled {
   background-color: #fff;
   border: 1px solid rgba(86, 13, 13, 0.2);
   color: rgba(0, 0, 0, 0.2);
+  cursor: default;
+}
+
+.modal__button:hover:not(:disabled) {
+  opacity: 0.8;
 }
 
 .modal__image {
