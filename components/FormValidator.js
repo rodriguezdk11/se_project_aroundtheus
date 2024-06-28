@@ -9,7 +9,7 @@ class FormValidator {
     this._inputEls = [...this._formEl.querySelectorAll(this._inputSelector)];
     this._submitButton = this._formEl.querySelector(this._submitButtonSelector);
   }
-}
+
 
 _showInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
   const errorMessageEl = this._formEl.querySelector(`#${inputEl.id}-error`);
@@ -93,5 +93,6 @@ _enableValidation(options) {
     this.disableButton();
   }
   }
+}
 
   export default FormValidator;
