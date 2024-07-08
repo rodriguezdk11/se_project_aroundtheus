@@ -92,7 +92,7 @@ function getCardElement(cardData) {
   return cardElement;
 }
 // Validation
-const config = {
+const validationSettings = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__button",
@@ -104,7 +104,7 @@ const editFormValidator = new FormValidator(
   validationSettings,
   profileEditForm
 );
-const addFormValidator = new FormValidator(validationSettings, addCardForm);
+const addFormValidator = new FormValidator(validationSettings, addNewCardForm);
 
 editFormValidator.enableValidation();
 addFormValidator.enableValidation();
