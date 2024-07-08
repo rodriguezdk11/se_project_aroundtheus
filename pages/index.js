@@ -35,8 +35,6 @@ const cardData = {
   link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
 };
 
-const card = new Card(cardData);
-
 // Elements
 
 const profileEditButton = document.querySelector("#profile-edit-button");
@@ -51,8 +49,7 @@ const profileDescriptionInput = document.querySelector(
 
 const profileEditForm = profileEditModal.querySelector(".modal__form");
 const cardListEl = document.querySelector(".cards__list");
-const cardTemplate =
-  document.querySelector("#card-template").content.firstElementChild;
+const cardTemplate = "#card-template";
 const addNewCardButton = document.querySelector(".profile__add-button");
 const addNewCardModal = document.querySelector("#add-card-modal");
 const addNewCardCloseButton = addNewCardModal.querySelector(".modal__close");
@@ -185,7 +182,7 @@ previewModalCloseBtn.addEventListener("click", () =>
 );
 
 initialCards.forEach((cardData) => {
-  const card = Card(cardData);
+  const card = Card(cardData, cardTemplate);
   const cardElement = card.getView();
   cardListEl.prepend(cardElement);
 });

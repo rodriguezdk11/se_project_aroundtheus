@@ -17,7 +17,6 @@ class Card {
     }
     return templateElement.content.firstElementChild.cloneNode(true);
   }
-
   _setEventListeners() {
     //".card__like-button"
     this._cardElement
@@ -55,15 +54,19 @@ class Card {
   }
 
   getView() {
-    this._cardElement = this_getTemplate();
+    this._cardElement = this._getTemplate();
 
-    this._element.querySelector(".card__image").src = this.link;
-    this._element.querySelector(".card__image").alt = this.name;
-    this._element.querySelector(".card__title").textContent = this.name;
-
+    this._likeButton = this._cardElement.querySelector(".card__like-button");
+    this._cardImage = this._cardElement.querySelector(".card__image");
+    this._deleteButton = this._cardElement.querySelector(
+      ".card__delete-button"
+    );
+    this._cardImage.src = this.link;
+    this._cardImage.alt = this.name;
+    this._cardElement.querySelector(".card__title").textContent = this.name;
     this._setEventListeners();
 
-    return this._element;
+    return this._cardElement;
   }
 }
 
