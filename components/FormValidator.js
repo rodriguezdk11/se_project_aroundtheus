@@ -76,7 +76,7 @@ class FormValidator {
   }
 
   _enableValidation(options) {
-    const formEls = [...document.querySelectorAll(options.formSelector)];
+    const formEls = [...document.querySelectorAll(formSelector)];
     console.log(formEls);
     formEls.forEach((formEl) => {
       formEl.addEventListener("submit", (e) => {

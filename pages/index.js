@@ -106,8 +106,8 @@ const editFormValidator = new FormValidator(
 );
 const addFormValidator = new FormValidator(validationSettings, addNewCardForm);
 
-editFormValidator.enableValidation();
-addFormValidator.enableValidation();
+editFormValidator._enableValidation();
+addFormValidator._enableValidation();
 
 // Event Handlers
 
