@@ -1,7 +1,7 @@
 class Card {
   constructor({ name, link }, cardTemplate, handleImageClick) {
-    this.name = name;
-    this.link = link;
+    this._name = name;
+    this._link = link;
     this._cardSelector = cardTemplate;
     this._handleImageClick = handleImageClick;
     this._element = this._getTemplate();
@@ -61,8 +61,8 @@ class Card {
     this._deleteButton = this._cardElement.querySelector(
       ".card__delete-button"
     );
-    this._cardImage.src = this.link;
-    this._cardImage.alt = this.name;
+    this._cardImage.src = this._link;
+    this._cardImage.alt = this._name;
     this._cardTitleEl.querySelector(".card__title").textContent = this.name;
     this._setEventListeners();
 

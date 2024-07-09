@@ -182,7 +182,7 @@ previewModalCloseBtn.addEventListener("click", () =>
 );
 
 initialCards.forEach((cardData) => {
-  const card = Card(cardData, cardTemplate);
+  const card = new Card(cardData, cardTemplate);
   const cardElement = card.getView();
   cardListEl.prepend(cardElement);
 });
