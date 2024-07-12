@@ -106,7 +106,7 @@ function handleAddCardSubmit(e) {
 function closeModalByEsc(evt) {
   if (evt.key === "Escape") {
     const openModal = document.querySelector(".modal_opened");
-    closePopup(openModal[0]);
+    closePopup(openModal);
   }
 }
 
