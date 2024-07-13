@@ -46,7 +46,7 @@ class FormValidator {
   }
 
   _checkFormValidity(inputEls) {
-    if (inputEls.every((input) => input.validity.valid)) {
+    if (this._inputEls.every((input) => input.validity.valid)) {
       return true;
     } else {
       return false;
@@ -54,10 +54,10 @@ class FormValidator {
   }
 
   _setEventListeners() {
+    this._toggleButtonState();
     this._inputEls.forEach((inputEl) => {
       inputEl.addEventListener("input", (e) => {
         this._checkInputValidity(inputEl);
-        this._toggleButtonState();
       });
     });
   }

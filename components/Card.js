@@ -20,8 +20,9 @@ class Card {
   _setEventListeners() {
     //".card__like-button"
     this._likeButton.addEventListener("click", () => {
-      this._handleLikeIcon;
+      this._handleLikeIcon();
     });
+
     //".card__delete-button"
     this._deleteButton.addEventListener("click", () => {
       this._handleDeleteCard();
@@ -32,7 +33,7 @@ class Card {
   }
 
   _handleLikeIcon() {
-    this._likeButton.classlist.toggle("card__like-button-active");
+    this._likeButton.classlist.toggle("card__like-button_active");
   }
 
   _handleDeleteCard() {
