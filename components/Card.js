@@ -27,6 +27,7 @@ class Card {
     this._deleteButton.addEventListener("click", () => {
       this._handleDeleteCard();
     });
+
     this._cardImage.addEventListener("click", () =>
       this._handleImageClick(this)
     );
