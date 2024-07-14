@@ -79,8 +79,8 @@ const editFormValidator = new FormValidator(
 );
 const addFormValidator = new FormValidator(validationSettings, addNewCardForm);
 
-editFormValidator._enableValidation();
-addFormValidator._enableValidation();
+editFormValidator.enableValidation();
+addFormValidator.enableValidation();
 
 // Event Handlers
 
@@ -129,8 +129,8 @@ function closePopup(modal) {
 }
 
 function handleImageClick(cardData) {
-  previewImageElement.src = cardData._link;
-  previewImageElement.alt = cardData._name;
+  previewImageElement.src = cardData.link;
+  previewImageElement.alt = cardData.name;
   previewImageLabel.textContent = cardData._name;
   openModal(previewImageModal);
 }

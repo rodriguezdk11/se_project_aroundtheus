@@ -36,13 +36,10 @@ class FormValidator {
     const isFormValid = this._checkFormValidity(this._inputEls);
 
     if (!isFormValid) {
-      this._submitButton.classList.add(this._inactiveButtonClass);
-      this._submitButton.disabled = true;
+      this._enableButton;
       return;
     }
-
-    this._submitButton.classList.remove(this._inactiveButtonClass);
-    this._submitButton.disabled = false;
+    this.disableButton;
   }
 
   _checkFormValidity(inputEls) {
@@ -73,7 +70,7 @@ class FormValidator {
     this._submitButton.disabled = true;
   }
 
-  _enableValidation() {
+  enableValidation() {
     this._setEventListeners();
   }
   resetValidation() {
