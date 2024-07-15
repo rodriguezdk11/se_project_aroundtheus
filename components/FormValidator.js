@@ -35,7 +35,7 @@ class FormValidator {
   _toggleButtonState() {
     const isFormValid = this._checkFormValidity(this._inputEls);
 
-    if (!isFormValid) {
+    if (isFormValid) {
       this.enableButton();
       return;
     }
@@ -62,12 +62,12 @@ class FormValidator {
   }
 
   enableButton() {
-    this._submitButton.classList.add(this._inactiveButtonClass);
+    this._submitButton.classList.remove(this._inactiveButtonClass);
     this._submitButton.disabled = false;
   }
 
   disableButton() {
-    this._submitButton.classList.remove(this._inactiveButtonClass);
+    this._submitButton.classList.add(this._inactiveButtonClass);
     this._submitButton.disabled = true;
   }
 
@@ -76,7 +76,7 @@ class FormValidator {
   }
   resetValidation() {
     this._inputEls.forEach((inputEl) => {
-      this.hideInputError(inputEl);
+      this._hideInputError(inputEl);
     });
     this.disableButton();
   }

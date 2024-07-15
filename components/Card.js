@@ -4,9 +4,13 @@ class Card {
     this._link = link;
     this._cardSelector = cardTemplate;
     this._handleImageClick = handleImageClick;
+
     // this._element = this._getTemplate();
+
     // this._likeButton = this._element.querySelector(".card__like-button");
+
     // this._deleteButton = this._element.querySelector(".card__delete-button");
+
     // this._cardImage = this._element.querySelector(".card__image");
   }
 
@@ -17,13 +21,16 @@ class Card {
     }
     return templateElement.content.firstElementChild.cloneNode(true);
   }
+
   _setEventListeners() {
     //".card__like-button"
+
     this._likeButton.addEventListener("click", () => {
       this._handleLikeIcon();
     });
 
     //".card__delete-button"
+
     this._deleteButton.addEventListener("click", () => {
       this._handleDeleteCard();
     });
@@ -57,6 +64,7 @@ class Card {
     this._deleteButton = this._cardElement.querySelector(
       ".card__delete-button"
     );
+
     this._cardTitleEl = this._cardElement.querySelector(".card__title");
     this._cardImage.src = this._link;
     this._cardImage.alt = this._name;

@@ -128,10 +128,10 @@ function closePopup(modal) {
   modal.removeEventListener("mousedown", closeModalByClick);
 }
 
-function handleImageClick(cardData) {
-  previewImageElement.src = cardData.link;
-  previewImageElement.alt = cardData.name;
-  previewImageLabel.textContent = cardData._name;
+function handleImageClick(card) {
+  previewImageElement.src = card._link;
+  previewImageElement.alt = card._name;
+  previewImageLabel.textContent = card._name;
   openModal(previewImageModal);
 }
 
