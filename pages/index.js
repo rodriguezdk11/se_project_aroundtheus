@@ -101,6 +101,7 @@ function handleAddCardSubmit(e) {
   closePopup(addNewCardModal);
   cardTitleInput.value = "";
   cardURLInput.value = "";
+  addFormValidator.disableButton();
 }
 
 function closeModalByEsc(evt) {
@@ -129,8 +130,8 @@ function closePopup(modal) {
 }
 
 function handleImageClick(card) {
-  previewImageElement.src = card._link;
-  previewImageElement.alt = card._name;
+  previewImageElement.src = card.link;
+  previewImageElement.alt = card.name;
   previewImageLabel.textContent = card._name;
   openModal(previewImageModal);
 }
