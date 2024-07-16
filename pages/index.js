@@ -132,7 +132,7 @@ function closePopup(modal) {
 function handleImageClick(card) {
   previewImageElement.src = card.link;
   previewImageElement.alt = card.name;
-  previewImageLabel.textContent = card._name;
+  previewImageLabel.textContent = card.name;
   openModal(previewImageModal);
 }
 

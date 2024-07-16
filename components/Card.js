@@ -68,7 +68,7 @@ class Card {
     this._cardTitleEl = this._cardElement.querySelector(".card__title");
     this._cardImage.src = this.link;
     this._cardImage.alt = this.name;
-    this._cardTitleEl.textContent = this._name;
+    this._cardTitleEl.textContent = this.name;
     this._setEventListeners();
 
     return this._cardElement;
