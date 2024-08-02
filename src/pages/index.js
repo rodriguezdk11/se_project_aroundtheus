@@ -1,5 +1,12 @@
+import "./pages/index.css";
+import { initialCards, config } from "../src/utils/constants.js";
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
+import Popup from "../src/components/Popup.js";
+import PopupWithForm from "../src/components/PopupWithForm.js";
+import PopupWithImage from "../src/components/PopupWithImage.js";
+import Section from "../src/components/Section.js";
+import UserInfo from "../src/components/UserInfo.js";
 
 const initialCards = [
   {
@@ -172,3 +179,44 @@ initialCards.forEach((cardData) => {
   const cardElement = createCard(cardData);
   cardListEl.prepend(cardElement);
 });
+
+// Pop Up
+
+const editProfilePopup = new PopupWithForm(
+  "#profile-edit-modal",
+  handleProfileEditSubmit
+);
+editProfilePopup.setEventListeners();
+
+const newCardPopup = new PopupWithForm(
+  "#add-card-modal",
+  handleProfileEditSubmit
+);
+newCardPopup.setEventListeners();
+
+const previewImagePopup = new PopupWithImage("#preview-image-modal");
+previewImagePopup.setEventListeners();
+
+// Section
+
+const section = new Section(
+  {
+    item: initialCards,
+    renderer: (item) => {
+      section.addItem(createCard(item));
+    },
+  },
+  cardListEl
+);
+section.renderItems();
+
+// User Info
+
+const user = new UserInfo({
+  name: ".profile__title",
+  description: ".profile__description",
+});
+
+export function multiply(a, b) {
+  return a * b;
+}
