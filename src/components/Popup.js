@@ -20,7 +20,7 @@ export default class Popup {
   }
 
   setEventListeners() {
-    const closeButton = this._popupElement.querySelector(".modal__close");
+    const closeButton = this._popupElement.querySelector(".modal__image-close");
     closeButton.addEventListener("click", () => {
       this.close();
     });
