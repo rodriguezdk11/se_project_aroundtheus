@@ -85,13 +85,6 @@ function handleAddCardSubmit(e) {
   addFormValidator.disableButton();
 }
 
-function closeModalByEsc(evt) {
-  if (evt.key === "Escape") {
-    const openModal = document.querySelector(".modal_opened");
-    closePopup(openModal);
-  }
-}
-
 function closeModalByClick(evt) {
   if (evt.target === evt.currentTarget) {
     closePopup(evt.currentTarget);
