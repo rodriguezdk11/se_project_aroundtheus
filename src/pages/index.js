@@ -85,22 +85,6 @@ function handleAddCardSubmit(e) {
   addFormValidator.disableButton();
 }
 
-function closeModalByClick(evt) {
-  if (evt.target === evt.currentTarget) {
-    closePopup(evt.currentTarget);
-  }
-}
-
-function openModal(modal) {
-  modal.classList.add("modal_opened");
-  modal.addEventListener("mousedown", closeModalByClick);
-}
-
-function closePopup(modal) {
-  modal.classList.remove("modal_opened");
-  modal.removeEventListener("mousedown", closeModalByClick);
-}
-
 function handleImageClick(card) {
   previewImageElement.src = card.link;
   previewImageElement.alt = card.name;
