@@ -89,7 +89,7 @@ function handleImageClick(card) {
   previewImageElement.src = card.link;
   previewImageElement.alt = card.name;
   previewImageLabel.textContent = card.name;
-  openModal(previewImageModal);
+  previewImagePopup.open(card);
 }
 
 function createCard(cardData) {
@@ -103,11 +103,11 @@ profileEditButton.addEventListener("click", () => {
   const { name, description } = user.getUserInfo();
   profileTitleInput.value = name;
   profileDescriptionInput.value = description;
-  openModal(profileEditModal);
+  editProfilePopup.open();
 });
 
 addNewCardButton.addEventListener("click", () => {
-  openModal(addNewCardModal);
+  newCardPopup.open();
 });
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
