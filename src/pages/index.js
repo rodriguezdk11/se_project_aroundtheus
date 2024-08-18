@@ -66,7 +66,7 @@ addFormValidator.enableValidation();
 
 function handleProfileEditSubmit(userData) {
   user.setUserInfo(userData);
-  closePopup(profileEditModal);
+  //closePopup(profileEditModal);
 }
 
 function handleAddCardSubmit(cardData) {
@@ -77,29 +77,6 @@ function handleAddCardSubmit(cardData) {
   // use section class method to add card
   // use newCardPopup close method
   addFormValidator.disableButton();
-}
-
-function closeModalByEsc(evt) {
-  if (evt.key === "Escape") {
-    const openModal = document.querySelector(".modal_opened");
-    closePopup(openModal);
-  }
-}
-function closeModalByClick(evt) {
-  if (evt.target === evt.currentTarget) {
-    closePopup(evt.currentTarget);
-  }
-}
-function openModal(modal) {
-  modal.classList.add("modal_opened");
-  document.addEventListener("keydown", closeModalByEsc);
-  modal.addEventListener("mousedown", closeModalByClick);
-}
-
-function closePopup(modal) {
-  modal.classList.remove("modal_opened");
-  document.removeEventListener("keydown", closeModalByEsc);
-  modal.removeEventListener("mousedown", closeModalByClick);
 }
 
 function handleImageClick(card) {
