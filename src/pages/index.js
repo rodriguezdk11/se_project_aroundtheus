@@ -59,14 +59,11 @@ const editFormValidator = new FormValidator(
 );
 const addFormValidator = new FormValidator(validationSettings, addNewCardForm);
 
-editFormValidator.enableValidation();
-addFormValidator.enableValidation();
-
 // Event Handlers
 
 function handleProfileEditSubmit(userData) {
   user.setUserInfo(userData);
-  //closePopup(profileEditModal);
+  editProfilePopup.close();
 }
 
 function handleAddCardSubmit(cardData) {
@@ -80,7 +77,6 @@ function handleAddCardSubmit(cardData) {
 }
 
 function handleImageClick(card) {
-  previewImagePopup.src = card.link;
   previewImagePopup.alt = card.name;
   previewImageLabel.textContent = card.name;
   previewImagePopup.open(card);
@@ -139,7 +135,3 @@ const user = new UserInfo({
   name: ".profile__title",
   description: ".profile__description",
 });
-
-export function multiply(a, b) {
-  return a * b;
-}
