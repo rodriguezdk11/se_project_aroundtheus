@@ -67,8 +67,6 @@ function handleAddCardSubmit(cardData) {
   const cardElement = createCard(cardData);
   section.addItem(cardElement);
   newCardPopup.close();
-  // use section class method to add card
-  // use newCardPopup close method
   addFormValidator.disableButton();
 }
 
